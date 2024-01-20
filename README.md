@@ -320,7 +320,7 @@ App.jsx
             flipped={card === choiceOne || card === choiceTwo || card.matched}
  
 
-- Pass in the "flippped" prop to the SingleCard component function 
+- Pass in the "flipped" prop to the SingleCard component function 
 
     const SingleCard = ({ card, handleChoice, flipped }) => 
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import SingleCard from "./components/SingleCard";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 const cardImages = [
   { src: "/img/cake1.png", matched: false },
@@ -54,6 +56,7 @@ function App() {
         setTimeout(() => resetTurn(), 1000)
       }
     }
+
   }, [choiceOne, choiceTwo])
 
   console.log(cards)
@@ -71,9 +74,13 @@ function App() {
     shuffleCards()
   }, [])
 
+  // set the window size for the confetti
+  const { width, height } = useWindowSize()
+
   return (
     <div className="App">
-      <h1>Cake Match</h1>
+      <h1>Cake Memory</h1>
+      <p>Turns: {turns}</p>
       <button onClick={shuffleCards}>Restart Game</button>
 
       <div className="card-grid">
@@ -87,7 +94,7 @@ function App() {
           />
         ))}
       </div>
-      <p>Turns: {turns}</p>
+      {cards.every(card => card.matched) && <Confetti width={width} height={height}/>}
     </div>
   );
 }
