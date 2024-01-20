@@ -1,11 +1,11 @@
-# Cake Match Game
+# Cake Memory Game
 🎂🍰🎂🎂
 🎂🎂🎂🎂
 🎂🎂🍰🎂
 
 This is a fun memory game to match up the different cakes!
 
-# How to Build This Game
+# How I Built This Game
 
 ### 1. Create the Card Images array 
 - Outside of the App function, create an Array called cardImages. 
